@@ -32,3 +32,18 @@ int singleNonDuplicate(std::vector<int>& nums) {
    return 0;
 }
 // end solution
+
+void run540() {
+   std::cout << "540: Single Element in a Sorted Array" << std::endl;
+   std::vector<int> vect{2, 2, 3, 4, 4, 5, 5};
+
+   std::cout << "Before:\t";
+   for (int x : vect) {
+      std::cout << x << " ";
+   }
+   std::cout << std::endl;
+
+   std::cout << "After:\t" << singleNonDuplicate(vect);
+
+   std::cout << std::endl;
+}
