@@ -5,4 +5,6 @@
 
 using namespace std;
 
-int main() {}
+int main() {
+   run1480();
+}
