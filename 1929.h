@@ -4,17 +4,16 @@
 
 // begin solution
 std::vector<int> getConcatenation(std::vector<int>& nums) {
-   std::vector<int> result;
+   // hold previous size before it changes
+   int size = nums.size();
 
-   for (int u = 0; u < 2; u++) {
-      for (int i = 0; i < nums.size(); i++) {
-         result.push_back(nums[i]);
-      }
+   // add onto the vector
+   for (int i = 0; i < size; i++) {
+      nums.push_back(nums[i]);
    }
-   return result;
+   return nums;
 }
 // end solution
-
 
 void run1929() {
    std::cout << "1929: Concatenation of Array" << std::endl;
