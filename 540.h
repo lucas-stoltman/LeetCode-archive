@@ -1,7 +1,9 @@
+// https://leetcode.com/problems/single-element-in-a-sorted-array/
 #pragma once
 
-#include <iostream>
-#include <vector>
+#include <algorithm>  // sort
+#include <iostream>   // output
+#include <vector>     // vector
 
 // begin solution
 int singleNonDuplicate(std::vector<int>& nums) {
@@ -24,7 +26,7 @@ int singleNonDuplicate(std::vector<int>& nums) {
          }
       }
 
-      // nums[size()] check left
+      // nums[size()-1] check left
       if (nums[size - 2] != nums[size - 1]) {
          return nums[size - 1];
       }
@@ -33,9 +35,55 @@ int singleNonDuplicate(std::vector<int>& nums) {
 }
 // end solution
 
+// random helper method
+int randNext() { return rand() % 50; }
+
+std::vector<int> vectBuilder(int length) {
+   std::vector<int> result;
+   std::vector<int> alreadyAdded;
+   srand(time(0));
+
+   int coinflip = 0;
+
+   for (int i = 0; i < length; i++) {
+      int r = randNext();
+
+      // separate random number to decouple from numbers added
+      int coinR = randNext();
+
+      // check if a value has already been added
+      if (std::find(alreadyAdded.begin(), alreadyAdded.end(), r) !=
+          alreadyAdded.end()) {
+      } else {
+         // check if it only adds one value
+         if ((coinR <= 2) && (coinflip == 0)) {
+            result.push_back(r);
+            alreadyAdded.push_back(r);
+            coinflip++;
+         } else {
+            result.push_back(r);
+            result.push_back(r);
+            alreadyAdded.push_back(r);
+         }
+      }
+   }
+   // in case the coinflip never succeeds
+   if (coinflip != 1) {
+      result.pop_back();
+      std::cout << result[length - 1] << std::endl;
+
+      coinflip++;
+      assert(coinflip == 1);
+   }
+
+   // sort
+   sort(result.begin(), result.end());
+   return result;
+}
+
 void run540() {
    std::cout << "540: Single Element in a Sorted Array" << std::endl;
-   std::vector<int> vect{2, 2, 3, 4, 4, 5, 5};
+   std::vector<int> vect = vectBuilder(10);
 
    std::cout << "Before:\t";
    for (int x : vect) {
