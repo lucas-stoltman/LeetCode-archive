@@ -39,7 +39,7 @@ int maxSubArray(std::vector<int>& nums) {
 
 void run53() {
    std::cout << "53: Maximum Subarray" << std::endl;
-   std::vector<int> vect{-2, 5, 2, -6, 3, 4, 6};
+   std::vector<int> vect{-2, 5, 2, -6, 3, 4, 6, -2, 7};
 
    std::cout << "Before:\t";
    for (int x : vect) {
