@@ -5,29 +5,28 @@ class Solution:
             # beginning edge case
             current = 0
             word_numbers = [current]
-            word_letters = [word[0]]
+            stored_letters = [word[0]]
 
             # handles 1 through (len-1)
             for i in range(1, len(word)):
+                current_letter = word[i]
+                last_letter = word[i-1]
+
                 # if the current letter is different from the last
-                if word[i] != word[i-1]:
+                if current_letter not in last_letter:
                     # if the letter is in the list already
-                    if word[i] in word_letters:
+                    if current_letter in stored_letters:
+                        index = stored_letters.index(current_letter)
                         # place the same index as the letter
-                        index = word_letters.index(word[i])
                         word_numbers.append(index)
                     else:
                         # place the same index as the letter
                         current += 1
-                        word_letters.append(word[i])
+                        stored_letters.append(word[i])
                         word_numbers.append(current)
                 else:
-                    word_numbers.append(current)
-
-            # ending edge case
-            # word_numbers = [current]
-            # word_letters = [word[len(word)-1]]
-
+                    index = stored_letters.index(current_letter)
+                    word_numbers.append(index)
             return word_numbers
 
         first_word = convert(s)
@@ -42,6 +41,6 @@ class Solution:
 
 # ------------------------------------------------
 sol = Solution()
-print(sol.isIsomorphic("cat", "tac"))
+print(sol.isIsomorphic("abbaa", "cddcd"))
 
 
