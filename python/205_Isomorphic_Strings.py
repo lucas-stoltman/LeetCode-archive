@@ -33,10 +33,7 @@ class Solution:
         second_word = convert(t)
 
         # compare strings of numbers
-        if first_word == second_word:
-            return True
-        else:
-            return False
+        return first_word == second_word
 
 
 # ------------------------------------------------
