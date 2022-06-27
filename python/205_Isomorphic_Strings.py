@@ -1,5 +1,8 @@
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
+
+        # TODO use a dictionary instead
+
         # if the characters map 1:1 then it is isomorphic
         def convert(word: str):
             # beginning edge case
