@@ -2,6 +2,18 @@ class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
 
         # TODO use a dictionary instead
+        # ----------------- WORK IN PROGRESS --------------------
+
+        s_t_map = {}
+        t_s_map = {}
+
+        for char1, char2 in zip(s, t):
+            if (char1 not in s_t_map) and (char2 not in t_s_map):
+                # map to each other
+                s_t_map[char1] = char2
+                t_s_map[char2] = char1
+
+        # -------------------------------------------------------
 
         # if the characters map 1:1 then it is isomorphic
         def convert(word: str):
