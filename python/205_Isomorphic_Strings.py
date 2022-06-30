@@ -14,6 +14,7 @@ class Solution:
                 t_s_map[char2] = char1
             # case 2: the letter is mapped
             elif s_t_map.get(char1) != char2 or t_s_map.get(char2) != char1:
+                # case 3: the letter is mapped incorrectly
                 return False
 
         return True
