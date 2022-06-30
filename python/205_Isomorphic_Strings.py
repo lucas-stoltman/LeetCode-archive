@@ -1,26 +1,27 @@
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
+        # if the characters map 1:1 then it is isomorphic
 
-        # TODO use a dictionary instead
-        # ----------------- WORK IN PROGRESS --------------------
+        # ----------------- Proper Solution --------------------
+        s_t_map = {}
+        t_s_map = {}
 
-        # s_t_map = {}
-        # t_s_map = {}
-        #
-        # for char1, char2 in zip(s, t):
-        #     # case 1: the letter is not mapped yet
-        #     if (char1 not in s_t_map) and (char2 not in t_s_map):
-        #         # map to each other
-        #         s_t_map[char1] = char2
-        #         t_s_map[char2] = char1
-        #     # case 2: the letter is mapped
-        #     elif s_t_map.get(char1) != char2 or t_s_map(char2) != char1:
-        #         return False
-        #     return True
+        for char1, char2 in zip(s, t):
+            # case 1: the letter is not mapped yet
+            if (char1 not in s_t_map) and (char2 not in t_s_map):
+                # map to each other
+                s_t_map[char1] = char2
+                t_s_map[char2] = char1
+            # case 2: the letter is mapped
+            elif s_t_map.get(char1) != char2 or t_s_map.get(char2) != char1:
+                return False
+
+        return True
 
         # -------------------------------------------------------
 
-        # if the characters map 1:1 then it is isomorphic
+        # ----------------- Old Solution --------------------
+        '''
         def convert(word: str):
             # beginning edge case
             current = 0
@@ -54,6 +55,8 @@ class Solution:
 
         # compare strings of numbers
         return first_word == second_word
+        '''
+    # -------------------------------------------------------
 
 
 # ------------------------------------------------
