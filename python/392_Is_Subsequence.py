@@ -6,6 +6,7 @@ class Solution:
         # resume searching from that index spot
 
         word_dict = {}
+        temp = ""
 
         # check each letter of target string
         for i in range(len(s)):
@@ -14,10 +15,11 @@ class Solution:
                 # check if the letter is found
                 if t[j] == s[i]:
                     word_dict[t[j]] = j
-                    print(t[j], j)
+                    temp += t[j]
+                    # print(t[j], j)
             # if letter is not found
-            return False
-        return True
+            # return False
+        return temp == s
 
 # ------------------------------------------------
 
