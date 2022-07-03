@@ -7,7 +7,9 @@ class Solution:
         word_dict = {}
         temp = ""
 
-        # TODO add base case
+        # base case
+        if s == "":
+            return True
 
         # case 1
         # iterate until it finds the matching letter
