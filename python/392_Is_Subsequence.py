@@ -79,8 +79,9 @@ class Solution:
         # # print(word_dict)
         # return temp == s
         # ------------------ old solution -----------------------
-# ------------------------------------------------
 
+
+# ------------------------------------------------
 sol = Solution()
 assert (sol.isSubsequence("abc", "ahbgdc")) is True
 assert (sol.isSubsequence("acb", "ahbgdc")) is False
