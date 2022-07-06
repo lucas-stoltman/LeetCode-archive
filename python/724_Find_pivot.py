@@ -1,3 +1,6 @@
+# 724. Find Pivot Index
+# https://leetcode.com/problems/find-pivot-index/
+
 class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
         nums_sum = sum(nums)
