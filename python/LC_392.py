@@ -85,9 +85,9 @@ class Solution:
 
 
 # ------------------------------------------------
-sol = Solution()
-assert (sol.isSubsequence("abc", "ahbgdc")) is True
-assert (sol.isSubsequence("acb", "ahbgdc")) is False
-assert (sol.isSubsequence("aaaaaa", "bbaaaa")) is False
-assert (sol.isSubsequence("", "abc")) is True
-assert (sol.isSubsequence("abc", "")) is False
+# sol = Solution()
+# assert (sol.isSubsequence("abc", "ahbgdc")) is True
+# assert (sol.isSubsequence("acb", "ahbgdc")) is False
+# assert (sol.isSubsequence("aaaaaa", "bbaaaa")) is False
+# assert (sol.isSubsequence("", "abc")) is True
+# assert (sol.isSubsequence("abc", "")) is False
