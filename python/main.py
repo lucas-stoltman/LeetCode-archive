@@ -8,4 +8,4 @@ import LC_1480  # 1480. Running Sum of 1d Array
 
 sol = LC_392.Solution()
 
-sol.isSubsequence("abc", "aabaaaac")
+sol.test()
