@@ -62,7 +62,13 @@ class Solution:
 
 
 # ------------------------------------------------
-sol = Solution()
-print(sol.isIsomorphic("abbaa", "cddcd"))
+def test(self):
+    sol = Solution()
+    # print("#1", sol.isSubsequence("abc", "ahbgdc"))
+    # print("#2", sol.isSubsequence("acb", "ahbgdc"))
+    # print("#3", sol.isSubsequence("aaaaaa", "bbaaaa"))
+    # assert (sol.isSubsequence("", "abc")) is True
+    # assert (sol.isSubsequence("abc", "")) is False
+    # print("All tests passed.")
 
 
