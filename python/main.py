@@ -7,6 +7,6 @@ import LC_392   # 392. Is Subsequence
 import LC_724   # 724. Find Pivot Index
 import LC_1480  # 1480. Running Sum of 1d Array
 
-sol = LC_392.Solution()
+sol = LC_21.Solution()
 
 sol.test()
