@@ -9,7 +9,7 @@ class ListNode:
 
 
 class Solution:
-    def mergeTwoLists(self, list1: [ListNode], list2: [ListNode]) -> [ListNode]:
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         # iterate through list1 and compare each value with list2
         # add the smaller value to result []
 
@@ -33,10 +33,23 @@ class Solution:
         return prehead.next
 
     # ------------------------------------------------
+    # TODO implement proper testing
     def test(self):
         sol = Solution()
-        l1 = ListNode()
-        sol.mergeTwoLists(l1[1, 2, 4], l2[1, 3, 4])
+
+        # list1
+        node3 = ListNode(4)
+        node2 = ListNode(2, node3)
+        node1 = ListNode(1, node2)
+        l1 = [node1, node2, node3]
+
+        # list2
+        node6 = ListNode(4)
+        node5 = ListNode(3, node6)
+        node4 = ListNode(1, node5)
+        l2 = [node4, node5, node6]
+
+        sol.mergeTwoLists(l1, l2)
         # assert (sol.isSubsequence("abc", "xaxbxcx")) is True
         # assert (sol.isSubsequence("acb", "abc")) is False
         # assert (sol.isSubsequence("aaaaaa", "bbaaaa")) is False
