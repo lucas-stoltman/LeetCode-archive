@@ -3,6 +3,7 @@
 
 import LC_21    # 21. Merge Two Sorted Lists
 import LC_205   # 205. Isomorphic Strings
+import LC_206   # 206. Reverse Linked List
 import LC_392   # 392. Is Subsequence
 import LC_724   # 724. Find Pivot Index
 import LC_1480  # 1480. Running Sum of 1d Array

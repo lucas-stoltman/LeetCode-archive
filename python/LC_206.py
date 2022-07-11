@@ -8,7 +8,7 @@
 #         self.next = next
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-
+        # create a new list by "popping" each value from the LL
 
 # ------------------------------------------------
 def test(self):
