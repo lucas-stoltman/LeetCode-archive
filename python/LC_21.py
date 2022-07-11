@@ -2,40 +2,44 @@
 # https://leetcode.com/problems/merge-two-sorted-lists/
 
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
 
 class Solution:
-    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+    def mergeTwoLists(self, list1: [ListNode], list2: [ListNode]) -> [ListNode]:
         # iterate through list1 and compare each value with list2
         # add the smaller value to result []
 
-        result = []
-        ptr1 = 0
-        ptr2 = 0
+        # refer to the first node we want to return
+        prehead = ListNode(-1)
 
-        for i in range(len(list1)+len(list2)):
-            if list1[ptr1] <= list2[ptr2]:
-                result += list1[ptr1]
-                ptr1 += 1
+        prev = prehead
+        # iterate through both linked lists
+        while list1 and list2:
+            if list1.val <= list2.val:
+                prev.next = list1
+                list1 = list1.next
             else:
-                result += list2[ptr2]
-                ptr2 += 1
+                prev.next = list2
+                list2 = list2.next
+            prev = prev.next
 
-        return result
+        # add the rest of the longer list to the end
+        prev.next = list1 or list2
 
+        return prehead.next
 
-
-# ------------------------------------------------
-def test(self):
-    # sol = Solution()
-    # assert (sol.isSubsequence("abc", "xaxbxcx")) is True
-    # assert (sol.isSubsequence("acb", "abc")) is False
-    # assert (sol.isSubsequence("aaaaaa", "bbaaaa")) is False
-    # assert (sol.isSubsequence("", "abc")) is True
-    # assert (sol.isSubsequence("abc", "")) is False
-    # print("All tests passed.")
-
-
+    # ------------------------------------------------
+    def test(self):
+        sol = Solution()
+        l1 = ListNode()
+        sol.mergeTwoLists(l1[1, 2, 4], l2[1, 3, 4])
+        # assert (sol.isSubsequence("abc", "xaxbxcx")) is True
+        # assert (sol.isSubsequence("acb", "abc")) is False
+        # assert (sol.isSubsequence("aaaaaa", "bbaaaa")) is False
+        # assert (sol.isSubsequence("", "abc")) is True
+        # assert (sol.isSubsequence("abc", "")) is False
+        # print("All tests passed.")
