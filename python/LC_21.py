@@ -39,15 +39,19 @@ class Solution:
         sol = Solution()
 
         # list1
+        node1 = ListNode(1)
+        node2 = ListNode(2)
         node3 = ListNode(4)
-        node2 = ListNode(2, node3)
-        node1 = ListNode(1, node2)
+        node1.next = node2
+        node2.next = node3
         l1 = [node1, node2, node3]
 
         # list2
+        node4 = ListNode(1)
+        node5 = ListNode(3)
         node6 = ListNode(4)
-        node5 = ListNode(3, node6)
-        node4 = ListNode(1, node5)
+        node4.next = node5
+        node5.next = node6
         l2 = [node4, node5, node6]
 
         sol.mergeTwoLists(l1, l2)
