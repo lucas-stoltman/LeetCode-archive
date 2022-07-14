@@ -7,7 +7,10 @@ class ListNode:
         self.val = val
         self.next = next
 
+
 class Solution:
+    from typing import Optional
+
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         # create a new list by "popping" each value from the LL
 
@@ -17,10 +20,9 @@ class Solution:
         pre = head
 
         # TODO Middle case
-        pre = None
         while head:
             # set last node as new first node
-            if head.next is Null:
+            if head.next is None:
                 head.next = pre
                 new_head = head
             else:
@@ -30,14 +32,13 @@ class Solution:
 
         # TODO ending edge case
         # set first node to null
-        original_head.next = NULL
-
+        original_head.next = None
 
         return new_head
+
+
 # ------------------------------------------------
 def test(self):
-    # sol = Solution()
+    sol = Solution()
     # assert (sol.isSubsequence("abc", "xaxbxcx")) is True
     # print("All tests passed.")
-
-

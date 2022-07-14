@@ -8,8 +8,9 @@ class ListNode:
         self.next = next
 
 
-# TODO fix "Optional"
 class Solution:
+    from typing import Optional
+
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         # iterate through list1 and compare each value with list2
         # add the smaller value to result []
