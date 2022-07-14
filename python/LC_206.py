@@ -12,16 +12,28 @@ class Solution:
         # create a new list by "popping" each value from the LL
 
         # TODO beginning edge case
-
+        original_head = head
+        new_head = None
+        pre = head
 
         # TODO Middle case
+        pre = None
         while head:
-            temp = head.next
-            pointer = head
-            ListNode(-1)
+            # set last node as new first node
+            if head.next is Null:
+                head.next = pre
+                new_head = head
+            else:
+                pre = head
+                nex = head.next
+                head.next = pre
 
         # TODO ending edge case
+        # set first node to null
+        original_head.next = NULL
 
+
+        return new_head
 # ------------------------------------------------
 def test(self):
     # sol = Solution()
